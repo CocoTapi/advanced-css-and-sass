@@ -130,6 +130,18 @@ body {
     }
 }
 
+@keyframes moveInButton {
+    0% {
+        opacity: 0;
+        transform: translateY(20px)
+    }
+
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
 .btn:link, .btn:visited {
     text-transform: uppercase;
     text-decoration: none;
@@ -137,17 +149,49 @@ body {
     display: inline-block;
     border-radius: 100px;
     transition: all .2s ;
+    position: relative; /* this is for reference of .btn::after */
 }
 
 .btn:hover {
     transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .btn:active {
     transform: translateY(-1px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .btn-white {
     background-color: #fff;
     color: #777;
+}
+
+.btn::after {
+    content: "";  /* you need this */
+    display: inline-block;
+    height: 100%;
+    width: 100%;
+    border-radius: 100px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    transition: all .4s;
+}
+
+.btn-white::after {
+    background-color: #fff;
+}
+
+/* hover -> after */
+.btn:hover::after {
+    transform: scaleX(1.4);
+    opacity: 0; /* invisible */
+}
+
+.btn-animated {
+    animation: moveInButton .5s ease-in-out .75s;
+    animation-fill-mode:  backwards; /* starting invisible = this make animation of 0% starts before the animation starts  */
 }
