@@ -1,0 +1,47 @@
+body {
+    font-family: "Lato", sans-serif;
+    font-family: 400;
+    line-height: 1.7;
+    color: $color-grey-dark;
+    padding: 3rem;
+}
+
+.heading-primary {
+    color: $color-white;
+    text-transform: uppercase;
+
+    /* prevent from animation glitch like movement */
+    backface-visibility: hidden;
+    margin-bottom: 6rem;
+
+    &--main {
+        display: block;
+        font-size: 6rem;
+        font-weight: 400;
+        letter-spacing: 3.5rem;
+        animation: moveInLeft;
+        animation-duration: 1s;
+        animation-timing-function: ease-out;
+    
+        /* 
+        the time the animation starts after refreshing 
+        animation-delay: 3s; 
+        */
+    
+        /* 
+        animation repeating for x times 
+        animation-iteration-count: 2; 
+       */
+    
+    }
+    
+    &--sub {
+        display: block;
+        font-size: 2rem;
+        font-weight: 700;
+        letter-spacing: 1.74rem;
+    
+        animation: moveInRight 1s ease-out;
+    
+    }
+}

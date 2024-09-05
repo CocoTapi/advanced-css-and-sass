@@ -1,0 +1,18 @@
+*,
+*::after,
+a::before {
+    margin: 0;
+    padding: 0;
+
+    box-sizing: inherit;
+}
+
+html {
+    font-size: 62.5%;
+    /* if user doesn't change size, it is 16px. so change 10px to set 10px = 1rem. so 10/16 = 62.5% */
+}
+
+body {
+    box-sizing: border-box;
+    /* width and height is content, padding total. NO border, No margin */
+}
