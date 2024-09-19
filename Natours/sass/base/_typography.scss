@@ -21,17 +21,18 @@ body {
         letter-spacing: 3.5rem;
         animation: moveInLeft;
         animation-duration: 1s;
-        animation-timing-function: ease-out;
+        animation-timing-function: cubic-bezier(0,1.43,1,-1.13);
     
         /* 
         the time the animation starts after refreshing 
-        animation-delay: 3s; 
         */
-    
+        // animation-delay: 3s; 
+
         /* 
         animation repeating for x times 
-        animation-iteration-count: 2; 
        */
+    //    animation-iteration-count: 2; 
+
     
     }
     

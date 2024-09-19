@@ -1,0 +1,48 @@
+.card {
+    perspective: 150rem;
+    -moz-perspective: 150rem;
+    position: relative;
+    //make sure the card is the same height
+    height: 50rem;
+
+    &__side {
+        color: #fff;
+        font-size: 2rem;
+
+        height: 50rem;
+        transition: all .8s;
+
+        //front and back is in the same position and size
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+
+        //hidden: back card won't be displayed
+        backface-visibility: hidden;
+
+        border-radius: 3px;
+        box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+        &--front {
+            background-color: $color-white;
+        }
+
+        &--back {
+            //add - to rotate the other direction
+            transform: rotateY(-180deg);
+
+            &-1 {
+                background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+            }
+        }
+    }
+
+    &:hover &__side--front {
+        transform: rotateY(180deg);
+    }
+
+    &:hover &__side--back {
+        transform: rotateY(0);
+    }
+}
