@@ -8,11 +8,37 @@ a::before {
 }
 
 html {
+    //this defines what 1rem is
     font-size: 62.5%;
     /* if user doesn't change size, it is 16px. so change 10px to set 10px = 1rem. so 10/16 = 62.5% */
+
+    //This is same as tab-port so no need 
+    // @include respond(phone) {
+    //     font-size: 50%;
+    // }
+
+    @include respond(tab-land) {
+        // 1rem = 9px,
+        font-size: 56.25%;
+    }
+
+    @include respond(tab-port) {
+        // 1rem = 8px, 8/16 = 50% 
+         font-size: 50%;
+     }
+
+     @include respond(big-desktop) {
+        // 1rem = 12px
+        font-size: 75%;
+    }   
 }
 
 body {
     box-sizing: border-box;
-    /* width and height is content, padding total. NO border, No margin */
+    /* width and height is content & padding's total. NO border, No margin */
+    padding: 3rem;
+
+    @include respond(tab-port) {
+        padding: 0;
+     }
 }

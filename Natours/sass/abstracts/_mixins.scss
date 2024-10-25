@@ -11,4 +11,57 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}  
+
+//MEDIA QUERY MANAGER
+/*
+0 - 600px :             phone
+600px - 900px :         tablet portrait
+900px - 1200px :        tablet landscape
+[ 1200px - 1800px ]is where our normal styles apply
+1800px -                big desktop
+*/
+
+/*
+option 1
+
+ @mixin respond-phone {
+    @media (max-width: 600px) { @content }
+ }
+*/
+
+/*
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+1em = 16px
+600px = 37.5em
+900px = 56.25em
+1200px = 75em
+1800px = 112.5em
+
+em is better than px because default font size are depending on users.
+
+ORDER: Base + typography > general layout + grid > page layout > components
+*/
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };
+    }
+
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content }; 
+    }
+
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content };
+    }
+
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content };
+    }
 }
