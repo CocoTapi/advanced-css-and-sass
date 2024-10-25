@@ -7,6 +7,12 @@
     background-color: rgba($color-black, .8);
     z-index: 9999;
 
+    opacity: 0;
+    //content is still there so need this
+    visibility: hidden;
+
+    transition: all .3s;
+
     &__content {
         @include absCenter;
 
@@ -17,6 +23,11 @@
         border-radius: 3px;
         display: table;
         overflow: hidden;
+
+        //for animation
+        opacity: 0;
+        transform: translate(-50%, -50%) scale(.25);
+        transition: all .5s .2s;
     }
 
     &__left {
@@ -53,5 +64,36 @@
         -ms-hyphens: auto;
         -webkit-hyphens: auto;
         hyphens: auto;
+    }
+
+    //when anchor tag that has the path to "#popup" are clicked
+    &:target {
+        opacity: 1;
+        visibility: visible
+    }
+
+    //animation
+    &:target &__content {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    //remove target
+    &__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 2.5rem;
+            font-size: 3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover {
+            color: $color-primary;
+        }
     }
 }
