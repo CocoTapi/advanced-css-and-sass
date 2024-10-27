@@ -109,9 +109,31 @@
                 </div>
                 <div class="col-1-of-2">
                     <div class="composition">
-                        <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+
+                        <!-- 171/900*100 = 19.. 20vw  171/600*100 = 28.5  30vw -->
+
+                        <img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w" 
+                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                            alt="Photo 1"
+                            class="composition__photo composition__photo--p1"
+                            src="img/nat-1-large.jpg"
+                            >
+                        <img srcset="img/nat-2.jpg 300w, img/nat-2-large.jpg 1000w" 
+                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                            alt="Photo 2"
+                            class="composition__photo composition__photo--p2"
+                            src="img/nat-2-large.jpg"
+                            >
+                        <img srcset="img/nat-3.jpg 300w, img/nat-3-large.jpg 1000w" 
+                            sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px"
+                            alt="Photo 3"
+                            class="composition__photo composition__photo--p3"
+                            src="img/nat-3-large.jpg"
+                            >
+
+                        <!-- <img src="img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
                         <img src="img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
-                        <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                        <img src="img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3"> -->
                     </div>
                 </div>
             </div>
@@ -370,9 +392,9 @@
     <footer class="footer">
         <div class="footer__logo-box">
             <picture class="footer__logo">
-                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)">
+                <source srcset="img/logo-green-small-1x.png 1x, img/logo-green-small-2x.png 2x" media="(max-width: 37.5em)" src="img/logo-green-small-2x.png">
                  <!-- adding "1x" and "2x" => give the browser to choose the best image for each situation -->
-                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo" class="footer__logo">
+                <img srcset="img/logo-green-1x.png 1x, img/logo-green-2x.png 2x" alt="full logo" class="footer__logo" src="img/logo-green-2x.png">
             </picture>
 
            
@@ -392,7 +414,7 @@
 
             <div class="col-1-of-2">
                 <p class="footer__copyright">
-                    Built my <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
+                    Built by <a href="#" class="footer__link">Jonas Schmedtmann</a> for his online course <a href="#" class="footer__link">Advanced CSS and Sass</a>.
                     Copyright &copy; by Jonas Schmedtmann. You are 100% allowed to use this webpage for both personal and commercial use, but NOT to claim it as your own design.
                     A credit to the original author, Jonas Schmedtmann, is of course highly appreciated!
                 </p>

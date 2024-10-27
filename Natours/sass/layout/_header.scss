@@ -2,7 +2,7 @@
     height: 95vh;
     background-image: linear-gradient(to right,
             rgba($color-primary-light, 0.8), rgba($color-primary-dark, 0.8)),
-        url('../img/hero.jpg');
+        url('../img/hero-small.jpg');
 
     /* whatever the width of the viewport/element, it always fit the element inside the box */
     background-size: cover;
@@ -11,6 +11,23 @@
     position: relative;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+
+    // dpi = dot per inch : Apple retina, high resolution screen
+    // ../img/hero-small.jpg's width is 600px
+    // ../img/hero.jpg's width is 2000px
+    // for media query, use em instead of px. 600px = 600/16=37.5em, 2000px = 2000/16=125em
+    @media(min-resolution: 192dpi) and (min-width: 37.5em), (min-width: 125em){
+        background-image: linear-gradient(to right,
+        rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)),
+        url('../img/hero.jpg');
+    }
+
+    
+    // @media (min-width: 2000px) {
+    //     background-image: linear-gradient(to right,
+    //     rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)),
+    //     url('../img/hero.jpg');
+    // }
 
     @include respond(phone) {
         -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
