@@ -23,8 +23,8 @@
     // ../img/hero.jpg's width is 2000px
     // for media query, use em instead of px. 600px = 600/16=37.5em, 2000px = 2000/16=125em
     @media(min-resolution: 192dpi) and (min-width: 37.5em), 
-    (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
-    (min-width: 125em){
+        only screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 37.5em), 
+        only screen and (min-width: 125em){
         background-image: linear-gradient(to right,
         rgba($color-secondary-light, 0.8), rgba($color-secondary-dark, 0.8)),
         url('../img/hero.jpg');

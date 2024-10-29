@@ -48,9 +48,11 @@ em is better than px because default font size are depending on users.
 ORDER: Base + typography > general layout + grid > page layout > components
 */
 
+// "only screen": if the user tries to print out the page, media query don't apply
+
 @mixin respond($breakpoint) {
     @if $breakpoint == phone {
-        @media (max-width: 37.5em) { @content };
+        @media only screen and (max-width: 37.5em) { @content };
     }
 
     @if $breakpoint == tab-port {
