@@ -27,12 +27,19 @@
     background-color: var(--color-grey-dark-1);
 
     //no grow, no shrink, basis:18%
-    flex: 0 0 18%
+    flex: 0 0 18%;
+
+    display: flex;
+    //change the direction to from top to bottom
+    flex-direction: column;
+    justify-content: space-between;
 
 }
 
 .hotel-view {
-    background-color: greenyellow;
+    //TEST
+    //background-color: greenyellow;
+    height: 80rem;
 
     //grow as much as it can
     flex: 1;
