@@ -231,7 +231,7 @@
 .overview {
     display: flex;
     align-items: center;
-    border-bottom: 1px solid var(--color-grey-light-2);
+    border-bottom: var(--line);
 
     
 
@@ -332,5 +332,86 @@
     100% {
         transform: scale(1);
         box-shadow: none;
+    }
+}
+
+///////////////////////////////////////////////
+// DETAIL PARAGRAPH
+
+//the last one of them will not have the margin
+.paragraph:not(:last-of-type) {
+    margin-bottom: 2rem;
+}
+
+///////////////////////////////////////////////
+// DETAIL LIST
+.list {
+    list-style: none;
+    margin: 3rem 0;
+    padding: 3rem 0;
+    border-top: var(--line);
+    border-bottom: var(--line);
+
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        //no grow, no shrink, 50% of width meaning 2 items in a row
+        flex: 0 0 50%;
+        margin-bottom: .7rem;
+    }
+
+    //insert SVG into CSS
+    //this is cleaner than putting directly into the item
+    &__item::before {
+        content: "";
+        display: inline-block;
+        height: 2rem;
+        width: 2rem;
+        margin-right: .7rem;
+
+        //older browser
+        // background-image: url(../img/SVG/circle-right.svg);
+        // background-size: cover;
+
+        //newer browser - mask
+        background-color: var(--color-primary);
+        -webkit-mask-image: url(../img/SVG/circle-right.svg);
+        -webkit-mask-size: cover;
+        mask-image: url(../img/SVG/circle-right.svg);
+        mask-size: cover;
+    }
+
+}
+
+///////////////////////////////////////////////
+// DETAIL RECOMMEND
+.recommend {
+    font-size: 1.3rem;
+    color: var(--color-grey-dark-3);
+
+    display: flex;
+    align-items: center;
+
+    &__count {
+        margin-right: auto;
+    }
+
+    &__friends {
+
+    }
+
+    &__photo {
+        //border to be added on top of our height and width
+        box-sizing: content-box;
+
+        height: 4rem;
+        width: 4rem;
+        border-radius: 50%;
+        border: 3px solid #fff;
+
+        &:not(:last-child) {
+            margin-right: -1.5rem;
+        }
     }
 }
