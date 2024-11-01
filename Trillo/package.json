@@ -6,15 +6,17 @@
     "scripts": {
         "watch:sass": "sass sass/main.scss css/style.css -w",
         "start": "npm-run-all --parallel watch:sass",
-        "compile:sass": "sass sass/main.scss css/style.comp.css",
-        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.prefix.css",
-        "compress:css": "sass css/style.prefix.css css/style.css --output-style compressed",
+        
+        "compile:sass": "sass sass/main.scss css/style.comp.css && echo 'Compiled SASS to style.comp.css'",
+        "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
+        "compress:css": "csso css/style.prefix.css -o css/style.css",
         "build:css": "npm-run-all compile:sass prefix:css compress:css"
     },
     "author": "Jonas",
     "license": "ISC",
     "devDependencies": {
         "autoprefixer": "^10.4.20",
+        "csso-cli": "^4.0.2",
         "npm-run-all": "^4.1.1",
         "postcss-cli": "^11.0.0"
     },
