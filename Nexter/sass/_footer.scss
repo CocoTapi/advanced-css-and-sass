@@ -1,6 +1,6 @@
 @use "base";
 
-.realtors {
+.footer {
     background-color: base.$color-secondary;
-    grid-column: col-start 7 / full-end;
+    grid-column: full-start / full-end;
 }

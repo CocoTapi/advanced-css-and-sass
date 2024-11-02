@@ -1,0 +1,6 @@
+@use "base";
+
+.homes {
+    background-color: base.$color-primary-dark;
+    grid-column: center-start / center-end;
+}
