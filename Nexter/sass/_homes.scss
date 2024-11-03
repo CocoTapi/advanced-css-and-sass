@@ -1,6 +1,15 @@
 @use "base";
 
 .homes {
-    background-color: base.$color-primary-dark;
+    // background-color: base.$color-primary-dark;
     grid-column: center-start / center-end;
+    margin: 15rem 0;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    grid-gap: 7rem;
+}
+
+.home {
+    background-color: base.$color-grey-light-1;
 }
