@@ -6,19 +6,31 @@
 
     margin: 15rem 0;
 
-    display: grid;
+    @supports(display: grid) {
+        display: grid;
 
-    // grid-template-columns: repeat(3, 1fr);
-    //auto-fit: create as many tracks as it can fit based on the width. 1 cell has at least 25rem width. => responsive layout!
-    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
-
-    // no need to define rows
-    grid-gap: 6rem;
-
-    align-items: start;
+        // grid-template-columns: repeat(3, 1fr);
+        //auto-fit: create as many tracks as it can fit based on the width. 1 cell has at least 25rem width. => responsive layout!
+        grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+    
+        // no need to define rows
+        grid-gap: 6rem;
+    
+        align-items: start;
+    }
 }
 
 .feature {
+
+    float: left;
+    width: 33.333%;
+    margin-bottom: 6rem;
+
+    @supports(display: grid) {
+        width: auto;
+        margin-bottom: 0;
+    }
+
 
     display: grid;
     grid-template-columns: min-content 1fr;

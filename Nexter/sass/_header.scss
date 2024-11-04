@@ -23,6 +23,15 @@
 
     justify-content: center;
 
+    @media only screen and (max-width: base.$bp-medium) {
+        // or full-start / full-end
+        grid-column: 1 / -1;
+    }
+
+    @media only screen and (max-width: base.$bp-small) {
+        padding: 5rem;
+    }
+
     &__logo {
         height: 3rem;
         justify-self: center;
