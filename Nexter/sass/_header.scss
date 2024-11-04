@@ -39,6 +39,7 @@
         font-size: 1.6rem;
         color: base.$color-grey-light-2;
 
+        // lines 
         &::before,
         &::after {
             content: "";
