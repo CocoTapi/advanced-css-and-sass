@@ -14,6 +14,11 @@ $color-grey-dark-2: #6D5D4B;
 $font-primary: 'Nunito', sans-serif;
 $font-display: 'Josefin Sans', sans-serif;
 
+// RESPONSIVE BREAKPOINTS
+
+$bp-largest: 75em; // 1200px / 16px
+$bp-large: 62.5em; //100px
+
 *,
 *::before,
 *::after {
@@ -26,6 +31,10 @@ html {
     box-sizing: border-box;
 
     font-size: 62.5%; //10px / 16px = 62.5% -> 1rem = 10px
+
+    @media only screen and (max-width: $bp-largest){
+        font-size: 50%; //  1rem = 8px
+    }
 }
 
 body {
@@ -38,6 +47,7 @@ body {
 .container {
     display: grid;
     grid-template-rows: 80vh min-content 40vw repeat(3, min-content);
+
     // 1140px / 8 = 142.5 -> 14rem column has at least 14rem width
     // 8rem for the sidebar
     // 8-repeated-columns wants to be in center so sandwich it with 1fr and the 1fr has minimum 6rem
@@ -47,7 +57,20 @@ body {
                            [col-start] minmax(min-content, 14rem) [col-end]) 
                            [center-end] minmax(6rem, 1fr) [full-end];
 
-    & > * {
-      
+    // & > * {
+    //   font-size: 3rem;
+    // }
+
+    @media only screen and (max-width: $bp-large) {
+        display: grid;
+
+        // add sidebar
+        grid-template-rows: 6rem 80vh min-content 40vw repeat(3, min-content);
+        
+        // remove sidebar
+        grid-template-columns: [full-start] minmax(6rem, 1fr)
+                               [center-start] repeat(8, 
+                               [col-start] minmax(min-content, 14rem) [col-end]) 
+                               [center-end] minmax(6rem, 1fr) [full-end];
     }
 }
