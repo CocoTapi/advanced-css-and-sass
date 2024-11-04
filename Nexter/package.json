@@ -7,7 +7,7 @@
       "watch:sass": "sass sass/main.scss css/style.css -w",
         "start": "npm-run-all --parallel watch:sass",
         
-        "compile:sass": "sass sass/main.scss css/style.comp.css && echo 'Compiled SASS to style.comp.css'",
+        "compile:sass": "sass sass/main.scss css/style.comp.css",
         "prefix:css": "postcss --use autoprefixer -b 'last 10 versions' css/style.comp.css -o css/style.prefix.css",
         "compress:css": "csso css/style.prefix.css -o css/style.css",
         "build:css": "npm-run-all compile:sass prefix:css compress:css"
